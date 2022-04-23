@@ -1,23 +1,35 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-    >
-      Header
-    </v-app-bar>
+  <v-app class="app">
+    <!-- Header Component -->
+    <Header />
 
+    <!-- Main Content -->
     <v-main>
-      <router-view/>
+      <v-content>
+        <router-view></router-view>
+      </v-content>
     </v-main>
+
+    <!-- Footer Component -->
+    <Footer />
   </v-app>
 </template>
 
 <script>
-  export default {
-    name: "App",
-    data: () => ({
-      //
-    }),
-  };
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+
+export default {
+  name: "App",
+  components: {
+    Header,
+    Footer,
+  },
+};
 </script>
+
+<style lang="scss">
+  .app {
+
+  }
+</style>
