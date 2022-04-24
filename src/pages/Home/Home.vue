@@ -1,6 +1,8 @@
 <template>
   <div class="home-view">
-    <v-container class="home-view__container">
+    <h2>Home</h2>
+
+    <v-container class="home-view__container mt-5">
       <v-btn
         @click="redirectTo('users')"
       >

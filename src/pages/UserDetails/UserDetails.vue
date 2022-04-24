@@ -1,6 +1,6 @@
 <template>
   <div class="user-details-view">
-    <v-container class="user-details-view__container">
+    <v-container class="user-details-view__container mx-0 px-0">
       <v-card v-if="selectedUser">
         <v-avatar>
           <v-img

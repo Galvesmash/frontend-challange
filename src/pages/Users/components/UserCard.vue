@@ -19,7 +19,8 @@
     </v-card-subtitle>
 
     <v-card-subtitle>
-      {{user.location.city}} - CEP: {{user.location.postcode}}
+      {{user.location.city}}
+      {{user.location.state}} - CEP: {{user.location.postcode}}
     </v-card-subtitle>
 
     <v-card-actions>

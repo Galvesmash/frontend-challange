@@ -1,7 +1,14 @@
 <template>
   <div class="users-view">
-    <v-container class="users-view__container">
-      <v-row dense>
+    <h2>Lista de membros</h2>
+    
+    <v-container class="users-view__container mt-5 mx-auto px-0">
+      <v-row>
+        <v-col>
+          <Filters />
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col
           :key="index"
           v-for="(user, index) in usersList"
@@ -17,11 +24,13 @@
 </template>
 
 <script>
+  import Filters from "./components/Filters.vue";
   import UserCard from "./components/UserCard.vue";
 
   export default {
     name: "UsersView",
     components: {
+      Filters,
       UserCard,
     },
     data: () => ({

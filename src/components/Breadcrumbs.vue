@@ -1,6 +1,6 @@
 <template>
   <v-breadcrumbs
-    class="breadcrumbs"
+    class="breadcrumbs mx-0 px-0"
     :items="items"
   >
     <template v-slot:divider>
