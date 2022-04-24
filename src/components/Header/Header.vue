@@ -17,20 +17,8 @@
           src="@/assets/logo.svg"
         />
 
-        <v-text-field
-          class="header__toolbar__search mx-4"
-          height="48"
-          hide-details
-          outlined
-          dense
-          placeholder="Buscar aqui"
-          rounded
-          v-model="search"
-        >
-          <template v-slot:prepend-inner>        
-            <v-icon class="mt-1 mr-2">mdi-magnify</v-icon> 
-          </template>
-        </v-text-field>
+        <Search />
+
         <v-btn
           color="primary"
           fab
@@ -43,8 +31,13 @@
 </template>
 
 <script>
+  import Search from "./components/Search.vue";
+
   export default {
     name: "HeaderComponent",
+    components: {
+      Search,
+    },
     data: () => ({
       search: null
     }),
@@ -55,10 +48,7 @@
   .header {
     background-color: #F5F5F5;
     &__toolbar {
-      &__search {
-        max-width: 464px;
-        min-width: 184px;
-      }
+      
     }
   }
 </style>

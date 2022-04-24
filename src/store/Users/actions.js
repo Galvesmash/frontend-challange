@@ -1,4 +1,3 @@
-
 import users from "@/assets/users.json";
 
 export default {
