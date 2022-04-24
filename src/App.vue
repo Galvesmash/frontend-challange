@@ -4,8 +4,12 @@
     <Header />
 
     <!-- Main Content -->
-    <v-main>
+    <v-main class="py-5">
       <v-content>
+        <!-- Breadcrumbs Component -->
+        <Breadcrumbs />
+
+        <!-- Router -->
         <router-view></router-view>
       </v-content>
     </v-main>
@@ -17,12 +21,14 @@
 
 <script>
 import Header from "@/components/Header.vue";
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     Header,
+    Breadcrumbs,
     Footer,
   },
 };

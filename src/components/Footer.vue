@@ -3,7 +3,7 @@
     class="footer"
     app
   >
-    Header
+    Footer
   </v-footer>
 </template>
 
