@@ -23,7 +23,10 @@
     </v-card-subtitle>
 
     <v-card-actions>
-      <v-btn text>
+      <v-btn
+        @click="$emit('handleClick')"
+        text
+      >
         Explore
       </v-btn>
     </v-card-actions>
@@ -36,10 +39,13 @@
     props: {
       user: {
         type: Object,
-        required: true,
-        // default: () => {}
+        required: true
       },
-    },
+      handleClick: {
+        type: Function,
+        required: true
+      }
+    }
   };
 </script>
 

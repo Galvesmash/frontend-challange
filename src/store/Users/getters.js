@@ -1,4 +1,7 @@
 export default {
+  selectedUser: state => {
+    return state.selectedUser;
+  },
   users: state => {
     return state.users;
   },

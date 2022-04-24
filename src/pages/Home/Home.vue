@@ -15,7 +15,7 @@
     name: "HomeView",
     methods: {
       redirectTo(pageName) {
-        this.$router.push({ name: pageName})
+        this.$router.push({ name: pageName});
       }
     }
   };

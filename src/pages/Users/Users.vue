@@ -8,6 +8,7 @@
         >
           <UserCard
             :user="user"
+            @handleClick="redirectToUserDetails(user)"
           />
         </v-col>
       </v-row>
@@ -32,7 +33,14 @@
         .then(response => {
           this.usersList = response;
         });
-    }, 
+    },
+    methods: {
+      redirectToUserDetails(user) {
+        localStorage.setItem("selectedUser", JSON.stringify(user));
+        this.$store.dispatch("Users/SELECT_USER", user);
+        this.$router.push({ name: 'details'});
+      }
+    }
   };
 </script>
 

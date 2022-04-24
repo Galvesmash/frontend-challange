@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/pages/Home/Home.vue";
 import Users from "@/pages/Users/Users.vue";
+import UserDetails from "@/pages/UserDetails/UserDetails.vue";
 
 Vue.use(VueRouter);
 
@@ -17,7 +18,14 @@ const routes = [
     name: "users",
     component: Users,
     breadcrumb: "Usuários",
-    previous: "Home"
+    previous: "home"
+  },
+  {
+    path: "/users/details",
+    name: "details",
+    component: UserDetails,
+    breadcrumb: "Detalhes",
+    previous: "users"
   },
 ];
 
