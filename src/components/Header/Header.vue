@@ -8,7 +8,6 @@
       class="header__toolbar ma-auto"
       color="#F5F5F5"
       flat
-      max-width="1264"
     >
       <div class="d-flex flex-grow-1 align-center justify-space-between">
         <v-img
@@ -48,7 +47,7 @@
   .header {
     background-color: #F5F5F5;
     &__toolbar {
-      
+      max-width: 1264px;
     }
   }
 </style>

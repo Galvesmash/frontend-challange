@@ -4,7 +4,11 @@ import mutations from "./mutations";
 
 const state = () => ({
   selectedUser: null,
-  users: []
+  filters: {
+    states: [],
+    cities: []
+  },
+  users: [],
 });
 
 export default {

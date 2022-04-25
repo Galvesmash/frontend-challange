@@ -5,7 +5,7 @@
   >
     <v-container
       class="footer__container ma-auto"
-      max-width="1264"
+      fluid
     >
       Footer
     </v-container>
@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
   .footer {
     &__container {
-      
+      max-width: 1264px;
     }
   }
 </style>

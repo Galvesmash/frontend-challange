@@ -1,6 +1,9 @@
 <template>
   <div class="user-details-view">
-    <v-container class="user-details-view__container mx-0 px-0">
+    <v-container
+      class="user-details-view__container mx-0 px-0"
+      fluid
+    >
       <v-card v-if="selectedUser">
         <v-avatar>
           <v-img
@@ -8,16 +11,12 @@
           />
         </v-avatar>
 
-        <v-card-title class="text-capitalize">
-          {{selectedUser.name.title}} {{selectedUser.name.first}} {{selectedUser.name.last}}
-        </v-card-title>
-
         <v-card-subtitle>
-          {{selectedUser.location.street}}
-        </v-card-subtitle>
+          <p class="my-2">{{user.location.street}}</p>
 
-        <v-card-subtitle>
-          {{selectedUser.location.city}} - CEP: {{selectedUser.location.postcode}}
+          <p class="mt-1 mb-0">{{user.location.city}}</p>
+          
+          <p class="my-0">{{user.location.state}} - CEP: {{user.location.postcode}}</p>
         </v-card-subtitle>
       </v-card>
     </v-container>
@@ -30,13 +29,11 @@
     created() {
       if (!this.selectedUser) {
         let localStorageUser = localStorage.getItem("selectedUser");
-        console.log(JSON.parse(localStorageUser));
         this.$store.dispatch(
           "Users/SELECT_USER",
           (localStorageUser) ? JSON.parse(localStorageUser) : null,
         );
       }
-      console.log(this.selectedUser);
     },
     computed: {
       selectedUser() {

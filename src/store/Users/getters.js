@@ -2,6 +2,9 @@ export default {
   selectedUser: state => {
     return state.selectedUser;
   },
+  filters: state => {
+    return state.filters;
+  },
   userStates: state => {
     return [...new Set(state.users.map(o => o.location.state))];
   },

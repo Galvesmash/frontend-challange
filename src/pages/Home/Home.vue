@@ -2,7 +2,10 @@
   <div class="home-view">
     <h2>Home</h2>
 
-    <v-container class="home-view__container mt-5">
+    <v-container
+      class="home-view__container mt-5"
+      fluid
+    >
       <v-btn
         @click="redirectTo('users')"
       >
