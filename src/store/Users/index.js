@@ -4,6 +4,7 @@ import mutations from "./mutations";
 
 const state = () => ({
   selectedUser: null,
+  search: "",
   filters: {
     states: [],
     cities: []

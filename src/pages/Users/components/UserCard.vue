@@ -11,7 +11,7 @@
       {{user.name.title}} {{user.name.first}} {{user.name.last}}
     </v-card-title>
 
-    <v-card-subtitle>
+    <v-card-subtitle class="text-capitalize">
       <p class="my-2">{{user.location.street}}</p>
 
       <p class="mt-1 mb-0">{{user.location.city}}</p>
@@ -24,7 +24,7 @@
         @click="$emit('handleClick')"
         text
       >
-        Explore
+        Sobre
       </v-btn>
     </v-card-actions>
   </v-card>

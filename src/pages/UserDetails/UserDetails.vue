@@ -4,19 +4,23 @@
       class="user-details-view__container mx-0 px-0"
       fluid
     >
-      <v-card v-if="selectedUser">
-        <v-avatar>
-          <v-img
-            :src="selectedUser.picture.thumbnail"
-          />
+      <v-card
+        class="user-card mx-auto py-5 text-center"
+        v-if="selectedUser"
+      >
+        <v-avatar
+          height="85"
+          width="85"
+        >
+          <v-img :src="selectedUser.picture.large" />
         </v-avatar>
 
-        <v-card-subtitle>
-          <p class="my-2">{{user.location.street}}</p>
+        <v-card-subtitle class="text-capitalize">
+          <p class="my-2">{{selectedUser.location.street}}</p>
 
-          <p class="mt-1 mb-0">{{user.location.city}}</p>
+          <p class="mt-1 mb-0">{{selectedUser.location.city}}</p>
           
-          <p class="my-0">{{user.location.state}} - CEP: {{user.location.postcode}}</p>
+          <p class="my-0">{{selectedUser.location.state}} - CEP: {{selectedUser.location.postcode}}</p>
         </v-card-subtitle>
       </v-card>
     </v-container>

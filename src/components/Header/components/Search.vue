@@ -7,7 +7,7 @@
     outlined
     placeholder="Buscar aqui"
     rounded
-    v-model="search"
+    v-model="userSearch"
   >
     <template v-slot:prepend-inner>        
       <v-icon class="mt-1 mr-2">mdi-magnify</v-icon> 
@@ -19,8 +19,13 @@
   export default {
     name: "SearchComponent",
     data: () => ({
-      search: null
+      userSearch: null
     }),
+    watch:{
+      userSearch() {
+        this.$store.dispatch("Users/SET_SEARCH", this.userSearch);
+      },
+    }
   };
 </script>
 

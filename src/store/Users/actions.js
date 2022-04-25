@@ -1,6 +1,9 @@
 import users from "@/assets/users.json";
 
 export default {
+  SET_SEARCH({ commit }, search) {
+    commit("SET_SEARCH", search);
+  },
   SET_FILTER_STATES({ commit }, filterStates) {
     commit("SET_FILTER_STATES", filterStates);
   },

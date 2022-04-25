@@ -18,12 +18,12 @@
 
         <Search />
 
-        <v-btn
-          color="primary"
-          fab
+        <v-avatar
+          height="56"
+          width="56"
         >
-          <v-icon>mdi-account</v-icon>
-        </v-btn>
+          <v-img src="https://arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/DLNCR7PGBGVX6LTYCHJVDH7M34.jpg" />
+        </v-avatar>
       </div>
     </v-toolbar>
   </v-app-bar>

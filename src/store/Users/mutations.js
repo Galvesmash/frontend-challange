@@ -1,4 +1,7 @@
 export default {
+  SET_SEARCH(state, search) {
+    state.search = search.toLowerCase();
+  },
   SET_FILTER_STATES(state, filterStates) {
     state.filters.states = filterStates;
   },
