@@ -10,6 +10,13 @@ const state = () => ({
     cities: []
   },
   users: [],
+  pagination: {
+    itemsPerPage: 9,
+    page: 1,
+    total: 0,
+    showFrom: 0,
+    showTo: 0
+  }
 });
 
 export default {

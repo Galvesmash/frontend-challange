@@ -10,6 +10,9 @@ export default {
   SET_FILTER_CITIES({ commit }, filterCities) {
     commit("SET_FILTER_CITIES", filterCities);
   },
+  SET_PAGE({ commit }, page) {
+    commit("SET_PAGE", page);
+  },
   GET_USERS({ commit }) {
     commit("SET_USERS", users.results);
     return users.results;

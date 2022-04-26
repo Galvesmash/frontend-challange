@@ -12,7 +12,7 @@
 
       <div class="users-view__container__results">
         <v-card class="mb-4 pa-5 d-flex justify-space-between">
-          <p class="ma-0">Exibindo 9 de 25</p>
+          <p class="ma-0">Exibindo {{pagination.showFrom}} de {{pagination.showTo}}</p>
           <p class="ma-0">Ordenar por: Nome</p>
         </v-card>
 
@@ -42,6 +42,12 @@
             />
           </v-col>
         </v-row>
+
+        <v-pagination
+          v-model="page"
+          :length="pagination.total"
+          :total-visible="7"
+        />
       </div>
     </v-container>
   </div>
@@ -59,6 +65,7 @@
     },
     data: () => ({
       loading: false,
+      page: 1,
     }),
     mounted() {
       this.getUsers();
@@ -83,7 +90,19 @@
       usersList() {
         return this.$store.getters["Users/filteredUsers"];
       },
+      pagination() {
+        return this.$store.getters["Users/pagination"];
+      },
     },
+    watch:{
+      page() {
+        this.$store.dispatch("Users/SET_PAGE", this.page);
+      },
+      "pagination.page"(newPage) {
+        console.log("newPage", newPage);
+        this.page = newPage;
+      },
+    }
   };
 </script>
 
