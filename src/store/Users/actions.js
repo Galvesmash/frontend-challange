@@ -4,6 +4,9 @@ export default {
   SET_SEARCH({ commit }, search) {
     commit("SET_SEARCH", search);
   },
+  SET_ORDER_BY({ commit }, orderBy) {
+    commit("SET_ORDER_BY", orderBy);
+  },
   SET_FILTER_STATES({ commit }, filterStates) {
     commit("SET_FILTER_STATES", filterStates);
   },

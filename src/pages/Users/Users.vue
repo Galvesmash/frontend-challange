@@ -13,7 +13,7 @@
       <div class="users-view__container__results">
         <v-card class="mb-4 pa-5 d-flex justify-space-between">
           <p class="ma-0">Exibindo {{pagination.showFrom}} de {{pagination.showTo}}</p>
-          <p class="ma-0">Ordenar por: Nome</p>
+          <OrderBy />
         </v-card>
 
         <v-row
@@ -22,6 +22,7 @@
         >
           <v-progress-circular indeterminate />
         </v-row>
+
         <v-row
           class="d-flex justify-space-around"
           v-else
@@ -32,6 +33,7 @@
           >
             Nenhum resultado encontrado...
           </span>
+
           <v-col
             :key="index"
             v-for="(user, index) in usersList"
@@ -44,9 +46,13 @@
         </v-row>
 
         <v-pagination
-          v-model="page"
-          :length="pagination.total"
           :total-visible="7"
+          :length="pagination.total"
+          circle
+          class="my-10"
+          color="#4A4A4A"
+          v-if="!loading && usersList.length"
+          v-model="page"
         />
       </div>
     </v-container>
@@ -55,12 +61,14 @@
 
 <script>
   import Filters from "./components/Filters/Filters.vue";
+  import OrderBy from "./components/OrderBy.vue";
   import UserCard from "./components/UserCard.vue";
 
   export default {
     name: "UsersView",
     components: {
       Filters,
+      OrderBy,
       UserCard,
     },
     data: () => ({

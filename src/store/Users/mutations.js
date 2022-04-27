@@ -1,7 +1,11 @@
 export default {
   SET_SEARCH(state, search) {
     state.pagination.page = 1;
-    state.search = search.toLowerCase();
+    state.search = search.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+  },
+  SET_ORDER_BY(state, orderBy) {
+    state.pagination.page = 1;
+    state.orderBy = orderBy;
   },
   SET_FILTER_STATES(state, filterStates) {
     state.pagination.page = 1;

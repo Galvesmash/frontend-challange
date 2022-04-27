@@ -5,6 +5,21 @@ import mutations from "./mutations";
 const state = () => ({
   selectedUser: null,
   search: "",
+  orderByOptions: [
+    {
+      text: "Nome",
+      value: "first",
+    },
+    {
+      text: "Cidade",
+      value: "city",
+    },
+    {
+      text: "Estado",
+      value: "state",
+    }
+  ],
+  orderBy: "first",
   filters: {
     states: [],
     cities: []

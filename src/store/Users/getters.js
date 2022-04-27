@@ -5,6 +5,12 @@ export default {
   seach: state => {
     return state.search;
   },
+  orderByOptions: state => {
+    return state.orderByOptions;
+  },
+  orderBy: state => {
+    return state.orderBy;
+  },
   filters: state => {
     return state.filters;
   },
@@ -26,9 +32,9 @@ export default {
     if (state.search) {
       usersList = usersList.filter(o => {
         if (
-          o.name.first.includes(state.search) ||
-          o.name.last.includes(state.search) ||
-          `${o.name.first} ${o.name.last}`.includes(state.search)
+          o.name.first.normalize("NFD").replace(/\p{Diacritic}/gu, "").includes(state.search) ||
+          o.name.last.normalize("NFD").replace(/\p{Diacritic}/gu, "").includes(state.search) ||
+          `${o.name.first} ${o.name.last}`.normalize("NFD").replace(/\p{Diacritic}/gu, "").includes(state.search)
         ) {
           return o;
         }
@@ -39,17 +45,21 @@ export default {
     if (states.length || cities.length) {
       usersList = usersList.filter(o => {
         if (
-          (states.length && cities.length) &&
-          (states.includes(o.location.state) && cities.includes(o.location.city))
+          ((states.length && cities.length) && (states.includes(o.location.state) && cities.includes(o.location.city))) ||
+          ((states.length && !cities.length) && states.includes(o.location.state)) ||
+          ((!states.length && cities.length) && cities.includes(o.location.city))
         ) {
-          return o;
-        } else if ((states.length && !cities.length) && states.includes(o.location.state)) {
-          return o;
-        } else if ((!states.length && cities.length) && cities.includes(o.location.city)) {
           return o;
         }
       });
     }
+
+    // Sort by state.orderBy
+    usersList = usersList.sort((a, b) => {
+      let compareA = a.name[state.orderBy] || a.location[state.orderBy];
+      let compareB = b.name[state.orderBy] || b.location[state.orderBy];
+      return compareA.localeCompare(compareB);
+    });
 
     // Pagination
     state.pagination.total = Math.ceil(usersList.length / state.pagination.itemsPerPage);

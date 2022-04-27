@@ -1,6 +1,7 @@
 <template>
   <v-text-field
     class="search mx-4"
+    color="#4A4A4A"
     dense
     height="48"
     hide-details

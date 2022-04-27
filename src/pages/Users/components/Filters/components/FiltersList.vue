@@ -4,6 +4,7 @@
 
     <v-list>
       <v-list-group
+        color="#4A4A4A"
         no-action
         sub-group
       >
@@ -23,6 +24,7 @@
             :label="state"
             :value="state"
             class="text-capitalize"
+            color="#4A4A4A"
             dense
             v-model="filters.states"
           />
@@ -43,6 +45,7 @@
       </v-list-group>
 
       <v-list-group
+        color="#4A4A4A"
         no-action
         sub-group
       >
@@ -62,6 +65,7 @@
             :label="city"
             :value="city"
             class="text-capitalize"
+            color="#4A4A4A"
             dense
             v-model="filters.cities"
           />

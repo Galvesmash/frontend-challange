@@ -7,7 +7,7 @@
       <v-img :src="user.picture.large" />
     </v-avatar>
 
-    <v-card-title class="text-capitalize">
+    <v-card-title class="d-flex justify-center text-capitalize">
       {{user.name.title}} {{user.name.first}} {{user.name.last}}
     </v-card-title>
 

@@ -6,6 +6,7 @@
     >
       <v-card
         class="user-card mx-auto py-5 text-center"
+        flat
         v-if="selectedUser"
       >
         <v-avatar
@@ -14,6 +15,10 @@
         >
           <v-img :src="selectedUser.picture.large" />
         </v-avatar>
+
+        <v-card-title class="d-flex justify-center text-capitalize">
+          {{selectedUser.name.title}} {{selectedUser.name.first}} {{selectedUser.name.last}}
+        </v-card-title>
 
         <v-card-subtitle class="text-capitalize">
           <p class="my-2">{{selectedUser.location.street}}</p>
