@@ -1,16 +1,25 @@
 <template>
   <div class="home-view">
-    <h2>Home</h2>
-
     <v-container
       class="home-view__container mt-5"
       fluid
     >
-      <v-btn
-        @click="redirectTo('users')"
+      <v-card
+        class="home-view__container__card mx-auto pa-10 text-center"
+        max-width="344"
       >
-        Mostrar Usuários
-      </v-btn>
+        <v-icon
+          class="home-view__container__card__icon"
+        >
+          mdi-account-multiple
+        </v-icon>
+
+        <v-btn
+          @click="redirectTo('users')"
+        >
+          Mostrar Usuários
+        </v-btn>
+      </v-card>
     </v-container>
   </div>
 </template>
@@ -29,7 +38,11 @@
 <style lang="scss" scoped>
   .home-view {
     &__container {
-
+      &__card {
+        &__icon {
+          font-size: 160px;
+        }
+      }
     }
   }
 </style>
