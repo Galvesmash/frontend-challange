@@ -8,7 +8,6 @@
       class="header__toolbar ma-auto"
       color="#F5F5F5"
       flat
-      max-width="1264"
     >
       <div class="d-flex flex-grow-1 align-center justify-space-between">
         <v-img
@@ -17,34 +16,27 @@
           src="@/assets/logo.svg"
         />
 
-        <v-text-field
-          class="header__toolbar__search mx-4"
-          height="48"
-          hide-details
-          outlined
-          dense
-          placeholder="Buscar aqui"
-          rounded
-          v-model="search"
+        <Search />
+
+        <v-avatar
+          height="56"
+          width="56"
         >
-          <template v-slot:prepend-inner>        
-            <v-icon class="mt-1 mr-2">mdi-magnify</v-icon> 
-          </template>
-        </v-text-field>
-        <v-btn
-          color="primary"
-          fab
-        >
-          <v-icon>mdi-account</v-icon>
-        </v-btn>
+          <v-img src="https://arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/DLNCR7PGBGVX6LTYCHJVDH7M34.jpg" />
+        </v-avatar>
       </div>
     </v-toolbar>
   </v-app-bar>
 </template>
 
 <script>
+  import Search from "./components/Search.vue";
+
   export default {
     name: "HeaderComponent",
+    components: {
+      Search,
+    },
     data: () => ({
       search: null
     }),
@@ -55,10 +47,7 @@
   .header {
     background-color: #F5F5F5;
     &__toolbar {
-      &__search {
-        max-width: 464px;
-        min-width: 184px;
-      }
+      max-width: 1264px;
     }
   }
 </style>
