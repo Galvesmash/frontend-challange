@@ -7,7 +7,7 @@
       <v-img :src="user.picture.large" />
     </v-avatar>
 
-    <v-card-title class="d-flex justify-center text-capitalize">
+    <v-card-title class="d-flex justify-center text-capitalize jest-user-card-title">
       {{user.name.title}} {{user.name.first}} {{user.name.last}}
     </v-card-title>
 
@@ -22,6 +22,7 @@
     <v-card-actions class="pa-0 justify-center">
       <v-btn
         @click="$emit('handleClick')"
+        class="jest-user-card-button"
         text
       >
         Sobre
