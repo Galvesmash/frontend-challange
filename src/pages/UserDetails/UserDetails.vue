@@ -10,20 +10,32 @@
         v-if="selectedUser"
       >
         <v-avatar
-          height="85"
-          width="85"
+          height="128"
+          width="128"
         >
           <v-img :src="selectedUser.picture.large" />
         </v-avatar>
 
-        <v-card-title class="d-flex justify-center text-capitalize">
-          {{selectedUser.name.title}} {{selectedUser.name.first}} {{selectedUser.name.last}}
+        <v-card-title class="d-flex justify-center mt-5 text-capitalize">
+          {{selectedUser.name.title}} {{selectedUser.name.first}} {{selectedUser.name.last}}, {{selectedUser.dob.age}}
         </v-card-title>
 
-        <v-card-subtitle class="text-capitalize">
-          <p class="my-2">{{selectedUser.location.street}}</p>
+        <v-card-subtitle>
+          <p class="text-caption my-0">Registrado a {{selectedUser.registered.age}} anos</p>
+        </v-card-subtitle>
 
-          <p class="mt-1 mb-0">{{selectedUser.location.city}}</p>
+        <v-card-subtitle class="mt-8">
+          <p class="my-0">{{selectedUser.email}}</p>
+
+          <p class="my-0">Telefone: {{selectedUser.phone}}</p>
+
+          <p class="my-0">Celular: {{selectedUser.cell}}</p>
+        </v-card-subtitle>
+
+        <v-card-subtitle class="mt-8 text-capitalize">
+          <p class="text-caption my-0">Endereço:</p>
+
+          <p class="my-0">{{selectedUser.location.street}}, {{selectedUser.location.city}}</p>
           
           <p class="my-0">{{selectedUser.location.state}} - CEP: {{selectedUser.location.postcode}}</p>
         </v-card-subtitle>
